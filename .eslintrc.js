@@ -11,6 +11,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'linebreak-style': 0,
     'no-plusplus': 'off',
     'no-console': 'warn',
     'max-len': ['warn', { code: 160 }],

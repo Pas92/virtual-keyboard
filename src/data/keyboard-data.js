@@ -490,6 +490,24 @@ export const keyboardData = [
 
     {
       eng: {
+        char: '\\',
+        shiftChar: '|',
+        capsChar: '\\',
+        shiftCapsChar: '|',
+      },
+      rus: {
+        char: '\\',
+        shiftChar: '/',
+        capsChar: '\\',
+        shiftCapsChar: '/',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'Backslash',
+    },
+
+    {
+      eng: {
         char: 'Del',
         shiftChar: 'Del',
         capsChar: 'Del',
@@ -501,9 +519,28 @@ export const keyboardData = [
         capsChar: 'Del',
         shiftCapsChar: 'Del',
       },
-      isFunc: false,
+      isFunc: true,
       isRow: false,
       code: 'Delete',
+    },
+  ],
+  [
+    {
+      eng: {
+        char: 'CapsLock',
+        shiftChar: 'CapsLock',
+        capsChar: 'CapsLock',
+        shiftCapsChar: 'CapsLock',
+      },
+      rus: {
+        char: 'CapsLock',
+        shiftChar: 'CapsLock',
+        capsChar: 'CapsLock',
+        shiftCapsChar: 'CapsLock',
+      },
+      isFunc: true,
+      isRow: false,
+      code: 'CapsLock',
     },
   ],
 ];

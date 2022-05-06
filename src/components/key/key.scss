@@ -1,0 +1,17 @@
+@import '../../_basic.scss';
+
+.key {
+  width: 36px;
+  height: 36px;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $secondary-color;
+
+  .key-name {
+    color: $keyboard-text-color;
+  }
+}

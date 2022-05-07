@@ -1,5 +1,13 @@
 .keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  width: min-content;
+  margin: 0 auto;
+
   .keyboard-row {
+    width: 790px;
     display: flex;
     gap: 10px;
   }

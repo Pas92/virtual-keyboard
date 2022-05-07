@@ -542,5 +542,619 @@ export const keyboardData = [
       isRow: false,
       code: 'CapsLock',
     },
+
+    {
+      eng: {
+        char: 'a',
+        shiftChar: 'A',
+        capsChar: 'A',
+        shiftCapsChar: 'a',
+      },
+      rus: {
+        char: 'ф',
+        shiftChar: 'Ф',
+        capsChar: 'Ф',
+        shiftCapsChar: 'ф',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyA',
+    },
+
+    {
+      eng: {
+        char: 's',
+        shiftChar: 'S',
+        capsChar: 'S',
+        shiftCapsChar: 's',
+      },
+      rus: {
+        char: 'ы',
+        shiftChar: 'Ы',
+        capsChar: 'Ы',
+        shiftCapsChar: 'ы',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyS',
+    },
+
+    {
+      eng: {
+        char: 'd',
+        shiftChar: 'D',
+        capsChar: 'D',
+        shiftCapsChar: 'd',
+      },
+      rus: {
+        char: 'в',
+        shiftChar: 'В',
+        capsChar: 'В',
+        shiftCapsChar: 'в',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyD',
+    },
+
+    {
+      eng: {
+        char: 'f',
+        shiftChar: 'F',
+        capsChar: 'F',
+        shiftCapsChar: 'f',
+      },
+      rus: {
+        char: 'а',
+        shiftChar: 'А',
+        capsChar: 'А',
+        shiftCapsChar: 'а',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyF',
+    },
+
+    {
+      eng: {
+        char: 'g',
+        shiftChar: 'G',
+        capsChar: 'G',
+        shiftCapsChar: 'g',
+      },
+      rus: {
+        char: 'п',
+        shiftChar: 'П',
+        capsChar: 'П',
+        shiftCapsChar: 'п',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyG',
+    },
+
+    {
+      eng: {
+        char: 'h',
+        shiftChar: 'H',
+        capsChar: 'H',
+        shiftCapsChar: 'h',
+      },
+      rus: {
+        char: 'р',
+        shiftChar: 'Р',
+        capsChar: 'Р',
+        shiftCapsChar: 'р',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyH',
+    },
+
+    {
+      eng: {
+        char: 'j',
+        shiftChar: 'J',
+        capsChar: 'J',
+        shiftCapsChar: 'j',
+      },
+      rus: {
+        char: 'о',
+        shiftChar: 'О',
+        capsChar: 'О',
+        shiftCapsChar: 'о',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyJ',
+    },
+
+    {
+      eng: {
+        char: 'k',
+        shiftChar: 'K',
+        capsChar: 'K',
+        shiftCapsChar: 'k',
+      },
+      rus: {
+        char: 'л',
+        shiftChar: 'Л',
+        capsChar: 'Л',
+        shiftCapsChar: 'л',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyK',
+    },
+
+    {
+      eng: {
+        char: 'l',
+        shiftChar: 'L',
+        capsChar: 'L',
+        shiftCapsChar: 'l',
+      },
+      rus: {
+        char: 'д',
+        shiftChar: 'Д',
+        capsChar: 'Д',
+        shiftCapsChar: 'д',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyL',
+    },
+
+    {
+      eng: {
+        char: ';',
+        shiftChar: ':',
+        capsChar: ';',
+        shiftCapsChar: ':',
+      },
+      rus: {
+        char: 'ж',
+        shiftChar: 'Ж',
+        capsChar: 'Ж',
+        shiftCapsChar: 'ж',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'Semicolon',
+    },
+
+    {
+      eng: {
+        char: '\'',
+        shiftChar: '"',
+        capsChar: '\'',
+        shiftCapsChar: '"',
+      },
+      rus: {
+        char: 'э',
+        shiftChar: 'Э',
+        capsChar: 'Э',
+        shiftCapsChar: 'э',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'Quote',
+    },
+
+    {
+      eng: {
+        char: 'Enter',
+        shiftChar: 'Enter',
+        capsChar: 'Enter',
+        shiftCapsChar: 'Enter',
+      },
+      rus: {
+        char: 'Enter',
+        shiftChar: 'Enter',
+        capsChar: 'Enter',
+        shiftCapsChar: 'Enter',
+      },
+      isFunc: true,
+      isRow: false,
+      code: 'Enter',
+    },
+  ],
+  [
+    {
+      eng: {
+        char: 'Shift',
+        shiftChar: 'Shift',
+        capsChar: 'Shift',
+        shiftCapsChar: 'Shift',
+      },
+      rus: {
+        char: 'Shift',
+        shiftChar: 'Shift',
+        capsChar: 'Shift',
+        shiftCapsChar: 'Shift',
+      },
+      isFunc: true,
+      isRow: false,
+      code: 'ShiftLeft',
+    },
+
+    {
+      eng: {
+        char: 'z',
+        shiftChar: 'Z',
+        capsChar: 'Z',
+        shiftCapsChar: 'z',
+      },
+      rus: {
+        char: 'я',
+        shiftChar: 'Я',
+        capsChar: 'Я',
+        shiftCapsChar: 'я',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyZ',
+    },
+
+    {
+      eng: {
+        char: 'x',
+        shiftChar: 'X',
+        capsChar: 'X',
+        shiftCapsChar: 'x',
+      },
+      rus: {
+        char: 'ч',
+        shiftChar: 'Ч',
+        capsChar: 'Ч',
+        shiftCapsChar: 'ч',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyX',
+    },
+
+    {
+      eng: {
+        char: 'c',
+        shiftChar: 'C',
+        capsChar: 'C',
+        shiftCapsChar: 'c',
+      },
+      rus: {
+        char: 'с',
+        shiftChar: 'С',
+        capsChar: 'С',
+        shiftCapsChar: 'с',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyC',
+    },
+
+    {
+      eng: {
+        char: 'v',
+        shiftChar: 'V',
+        capsChar: 'V',
+        shiftCapsChar: 'v',
+      },
+      rus: {
+        char: 'м',
+        shiftChar: 'М',
+        capsChar: 'М',
+        shiftCapsChar: 'м',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyV',
+    },
+
+    {
+      eng: {
+        char: 'b',
+        shiftChar: 'B',
+        capsChar: 'B',
+        shiftCapsChar: 'b',
+      },
+      rus: {
+        char: 'и',
+        shiftChar: 'И',
+        capsChar: 'И',
+        shiftCapsChar: 'и',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyB',
+    },
+
+    {
+      eng: {
+        char: 'n',
+        shiftChar: 'N',
+        capsChar: 'N',
+        shiftCapsChar: 'n',
+      },
+      rus: {
+        char: 'т',
+        shiftChar: 'Т',
+        capsChar: 'Т',
+        shiftCapsChar: 'т',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyN',
+    },
+
+    {
+      eng: {
+        char: 'm',
+        shiftChar: 'M',
+        capsChar: 'M',
+        shiftCapsChar: 'm',
+      },
+      rus: {
+        char: 'ь',
+        shiftChar: 'Ь',
+        capsChar: 'Ь',
+        shiftCapsChar: 'ь',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'KeyM',
+    },
+
+    {
+      eng: {
+        char: ',',
+        shiftChar: '<',
+        capsChar: ',',
+        shiftCapsChar: '<',
+      },
+      rus: {
+        char: 'б',
+        shiftChar: 'Б',
+        capsChar: 'Б',
+        shiftCapsChar: 'б',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'Comma',
+    },
+
+    {
+      eng: {
+        char: '.',
+        shiftChar: '>',
+        capsChar: '.',
+        shiftCapsChar: '>',
+      },
+      rus: {
+        char: 'ю',
+        shiftChar: 'Ю',
+        capsChar: 'Ю',
+        shiftCapsChar: 'ю',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'Period',
+    },
+
+    {
+      eng: {
+        char: '/',
+        shiftChar: '?',
+        capsChar: '/',
+        shiftCapsChar: '?',
+      },
+      rus: {
+        char: '.',
+        shiftChar: ',',
+        capsChar: '.',
+        shiftCapsChar: ',',
+      },
+      isFunc: false,
+      isRow: false,
+      code: 'Slash',
+    },
+
+    {
+      eng: {
+        char: '↑',
+        shiftChar: '↑',
+        capsChar: '↑',
+        shiftCapsChar: '↑',
+      },
+      rus: {
+        char: '↑',
+        shiftChar: '↑',
+        capsChar: '↑',
+        shiftCapsChar: '↑',
+      },
+      isFunc: false,
+      isRow: true,
+      code: 'ArrowUp',
+    },
+
+    {
+      eng: {
+        char: 'Shift',
+        shiftChar: 'Shift',
+        capsChar: 'Shift',
+        shiftCapsChar: 'Shift',
+      },
+      rus: {
+        char: 'Shift',
+        shiftChar: 'Shift',
+        capsChar: 'Shift',
+        shiftCapsChar: 'Shift',
+      },
+      isFunc: true,
+      isRow: false,
+      code: 'ShiftRight',
+    },
+  ],
+  [
+    {
+      eng: {
+        char: 'Ctrl',
+        shiftChar: 'Ctrl',
+        capsChar: 'Ctrl',
+        shiftCapsChar: 'Ctrl',
+      },
+      rus: {
+        char: 'Ctrl',
+        shiftChar: 'Ctrl',
+        capsChar: 'Ctrl',
+        shiftCapsChar: 'Ctrl',
+      },
+      isFunc: true,
+      isRow: false,
+      code: 'ControlLeft',
+    },
+
+    {
+      eng: {
+        char: 'Win',
+        shiftChar: 'Win',
+        capsChar: 'Win',
+        shiftCapsChar: 'Win',
+      },
+      rus: {
+        char: 'Win',
+        shiftChar: 'Win',
+        capsChar: 'Win',
+        shiftCapsChar: 'Win',
+      },
+      isFunc: true,
+      isRow: false,
+      code: 'MetaLeft',
+    },
+
+    {
+      eng: {
+        char: 'Alt',
+        shiftChar: 'Alt',
+        capsChar: 'Alt',
+        shiftCapsChar: 'Alt',
+      },
+      rus: {
+        char: 'Alt',
+        shiftChar: 'Alt',
+        capsChar: 'Alt',
+        shiftCapsChar: 'Alt',
+      },
+      isFunc: true,
+      isRow: false,
+      code: 'AltLeft',
+    },
+
+    {
+      eng: {
+        char: '',
+        shiftChar: '',
+        capsChar: '',
+        shiftCapsChar: '',
+      },
+      rus: {
+        char: '',
+        shiftChar: '',
+        capsChar: '',
+        shiftCapsChar: '',
+      },
+      isFunc: true,
+      isRow: false,
+      code: 'Space',
+    },
+
+    {
+      eng: {
+        char: 'Alt',
+        shiftChar: 'Alt',
+        capsChar: 'Alt',
+        shiftCapsChar: 'Alt',
+      },
+      rus: {
+        char: 'Alt',
+        shiftChar: 'Alt',
+        capsChar: 'Alt',
+        shiftCapsChar: 'Alt',
+      },
+      isFunc: true,
+      isRow: false,
+      code: 'AltRight',
+    },
+
+    {
+      eng: {
+        char: '←',
+        shiftChar: '←',
+        capsChar: '←',
+        shiftCapsChar: '←',
+      },
+      rus: {
+        char: '←',
+        shiftChar: '←',
+        capsChar: '←',
+        shiftCapsChar: '←',
+      },
+      isFunc: false,
+      isRow: true,
+      code: 'ArrowLeft',
+    },
+
+    {
+      eng: {
+        char: '↓',
+        shiftChar: '↓',
+        capsChar: '↓',
+        shiftCapsChar: '↓',
+      },
+      rus: {
+        char: '↓',
+        shiftChar: '↓',
+        capsChar: '↓',
+        shiftCapsChar: '↓',
+      },
+      isFunc: false,
+      isRow: true,
+      code: 'ArrowDown',
+    },
+
+    {
+      eng: {
+        char: '→',
+        shiftChar: '→',
+        capsChar: '→',
+        shiftCapsChar: '→',
+      },
+      rus: {
+        char: '→',
+        shiftChar: '→',
+        capsChar: '→',
+        shiftCapsChar: '→',
+      },
+      isFunc: false,
+      isRow: true,
+      code: 'ArrowRight',
+    },
+
+    {
+      eng: {
+        char: 'Ctrl',
+        shiftChar: 'Ctrl',
+        capsChar: 'Ctrl',
+        shiftCapsChar: 'Ctrl',
+      },
+      rus: {
+        char: 'Ctrl',
+        shiftChar: 'Ctrl',
+        capsChar: 'Ctrl',
+        shiftCapsChar: 'Ctrl',
+      },
+      isFunc: true,
+      isRow: false,
+      code: 'ControlRight',
+    },
   ],
 ];

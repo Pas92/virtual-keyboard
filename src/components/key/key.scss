@@ -11,8 +11,19 @@
 
   background-color: $secondary-color;
 
+  transition: border-color 0.3s;
+
   .key-name {
     color: $keyboard-text-color;
+    transition: color 0.3s
+  }
+
+  &.key_push {
+    border-color: $primary-color;
+
+    .key-name {
+      color: $primary-color;
+    }
   }
 
   &.key_backspace,

@@ -28,6 +28,7 @@ export class Key {
     this.keyNameContainer.textContent = this.keyName;
 
     this.code = keyData.code;
+    this.HTML.dataset.code = keyData.code;
     this.isFunc = keyData.isFunc;
     this.isRow = keyData.isRow;
 
@@ -42,5 +43,13 @@ export class Key {
 
   getDOM() {
     return this.HTML;
+  }
+
+  press() {
+    this.HTML.classList.add('key_push');
+  }
+
+  release() {
+    this.HTML.classList.remove('key_push');
   }
 }

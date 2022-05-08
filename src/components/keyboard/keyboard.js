@@ -12,7 +12,7 @@ export class Keyboard {
     this.pressKey = this.pressKey.bind(this);
     this.releaseKey = this.releaseKey.bind(this);
     this.initKeysEvents = this.initKeysEvents.bind(this);
-    this.changeLang = this.changeLang.bind(this);
+    this.changeChar = this.changeChar.bind(this);
 
     this.isCaps = false;
     this.isShift = false;
@@ -62,13 +62,21 @@ export class Keyboard {
     if (keyName === 'CapsLock') {
       if (this.isCaps) {
         this.isCaps = false;
+        this.changeChar();
       } else {
         this.isCaps = true;
+        this.changeChar();
       }
+    }
+
+    if (keyName === 'ShiftLeft' || keyName === 'ShiftRight') {
+      this.isShift = true;
+      this.changeChar();
     }
 
     if (this.pressedKeys.has('AltLeft') && this.pressedKeys.has('ShiftLeft')) {
       this.changeLang();
+      this.changeChar();
     }
   }
 
@@ -86,6 +94,11 @@ export class Keyboard {
       this.keys[keyName].release();
       this.pressedKeys.delete(keyName);
     }
+
+    if (keyName === 'ShiftLeft' || keyName === 'ShiftRight') {
+      this.isShift = false;
+      this.changeChar();
+    }
   }
 
   initKeysEvents() {
@@ -95,7 +108,7 @@ export class Keyboard {
     });
   }
 
-  changeLang() {
+  changeChar() {
     let option = '';
     switch (true) {
       case this.isCaps && this.isShift:
@@ -111,11 +124,14 @@ export class Keyboard {
         option = 'char';
     }
 
-    this.keyboardLang = this.keyboardLang === 'eng' ? 'rus' : 'eng';
     localStorage.setItem('keyboardLang', this.keyboardLang);
 
     Object.values(this.keys).forEach((e) => {
       e.setKeyChar(option);
     });
+  }
+
+  changeLang() {
+    this.keyboardLang = this.keyboardLang === 'eng' ? 'rus' : 'eng';
   }
 }

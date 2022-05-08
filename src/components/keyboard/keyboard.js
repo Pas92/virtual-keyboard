@@ -28,6 +28,8 @@ export class Keyboard {
       this.createRow(e);
     });
 
+    this.terminal = document.querySelector('.terminal');
+
     document.addEventListener('keydown', this.pressKey);
     document.addEventListener('keyup', this.releaseKey);
 
@@ -77,6 +79,10 @@ export class Keyboard {
     if (this.pressedKeys.has('AltLeft') && this.pressedKeys.has('ShiftLeft')) {
       this.changeLang();
       this.changeChar();
+    }
+
+    if (!this.keys[keyName].isFunc) {
+      this.terminal.value = `${this.terminal.value}${this.keys[keyName].keyChar}`;
     }
   }
 

@@ -24,9 +24,9 @@ export class Key {
     this.HTML = htmlToElement(HTML);
     this.keyData = keyData;
 
-    this.keyName = keyData[localStorage.getItem('keyboardLang') || 'eng'].char;
+    this.keyChar = keyData[localStorage.getItem('keyboardLang') || 'eng'].char;
     this.keyNameContainer = this.HTML.querySelector('.key-name');
-    this.keyNameContainer.textContent = this.keyName;
+    this.keyNameContainer.textContent = this.keyChar;
 
     this.code = keyData.code;
     this.HTML.dataset.code = keyData.code;
@@ -55,6 +55,7 @@ export class Key {
   }
 
   setKeyChar(option) {
-    this.keyNameContainer.textContent = this.keyData[localStorage.getItem('keyboardLang')][option];
+    this.keyChar = this.keyData[localStorage.getItem('keyboardLang')][option];
+    this.keyNameContainer.textContent = this.keyChar;
   }
 }

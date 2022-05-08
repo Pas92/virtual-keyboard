@@ -22,6 +22,7 @@ const customStyles = {
 export class Key {
   constructor(keyData) {
     this.HTML = htmlToElement(HTML);
+    this.keyData = keyData;
 
     this.keyName = keyData[localStorage.getItem('keyboardLang') || 'eng'].char;
     this.keyNameContainer = this.HTML.querySelector('.key-name');
@@ -51,5 +52,9 @@ export class Key {
 
   release() {
     this.HTML.classList.remove('key_push');
+  }
+
+  setKeyChar(option) {
+    this.keyNameContainer.textContent = this.keyData[localStorage.getItem('keyboardLang')][option];
   }
 }

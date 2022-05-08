@@ -12,8 +12,17 @@ export class Keyboard {
     this.pressKey = this.pressKey.bind(this);
     this.releaseKey = this.releaseKey.bind(this);
     this.initKeysEvents = this.initKeysEvents.bind(this);
+    this.changeLang = this.changeLang.bind(this);
 
     this.isCaps = false;
+    this.isShift = false;
+
+    this.pressedKeys = new Set();
+
+    if (!localStorage.getItem('keyboardLang')) {
+      localStorage.setItem('keyboardLang', 'eng');
+    }
+    this.keyboardLang = localStorage.getItem('keyboardLang') || 'eng';
 
     keyboardRows.forEach((e) => {
       this.createRow(e);
@@ -45,7 +54,11 @@ export class Keyboard {
   pressKey(event) {
     event.preventDefault();
     const keyName = event.code || event.currentTarget.dataset.code;
+    if (!this.keys[keyName]) return;
+
     this.keys[keyName].press();
+    this.pressedKeys.add(keyName);
+
     if (keyName === 'CapsLock') {
       if (this.isCaps) {
         this.isCaps = false;
@@ -53,18 +66,25 @@ export class Keyboard {
         this.isCaps = true;
       }
     }
+
+    if (this.pressedKeys.has('AltLeft') && this.pressedKeys.has('ShiftLeft')) {
+      this.changeLang();
+    }
   }
 
   releaseKey(event) {
     event.preventDefault();
     const keyName = event.code || event.currentTarget.dataset.code;
+    if (!this.keys[keyName]) return;
 
     if (keyName === 'CapsLock') {
       if (!this.isCaps) {
         this.keys[keyName].release();
+        this.pressedKeys.delete(keyName);
       }
     } else {
       this.keys[keyName].release();
+      this.pressedKeys.delete(keyName);
     }
   }
 
@@ -72,6 +92,30 @@ export class Keyboard {
     Object.values(this.keys).forEach((e) => {
       e.HTML.addEventListener('pointerdown', this.pressKey);
       e.HTML.addEventListener('pointerup', this.releaseKey);
+    });
+  }
+
+  changeLang() {
+    let option = '';
+    switch (true) {
+      case this.isCaps && this.isShift:
+        option = 'shiftCapsChar';
+        break;
+      case this.isCaps:
+        option = 'capsChar';
+        break;
+      case this.isShift:
+        option = 'shiftChar';
+        break;
+      default:
+        option = 'char';
+    }
+
+    this.keyboardLang = this.keyboardLang === 'eng' ? 'rus' : 'eng';
+    localStorage.setItem('keyboardLang', this.keyboardLang);
+
+    Object.values(this.keys).forEach((e) => {
+      e.setKeyChar(option);
     });
   }
 }

@@ -6,13 +6,14 @@ import { htmlToElement } from '../../utils/htmlToElement';
 import { Key } from '../key/key';
 
 export class Keyboard {
-  constructor(keyboardRows) {
+  constructor(keyboardRows, terminal) {
     this.HTML = htmlToElement(KeyboardHTML);
     this.keys = {};
     this.pressKey = this.pressKey.bind(this);
     this.releaseKey = this.releaseKey.bind(this);
     this.initKeysEvents = this.initKeysEvents.bind(this);
     this.changeChar = this.changeChar.bind(this);
+    this.insertChar = this.insertChar.bind(this);
 
     this.isCaps = false;
     this.isShift = false;
@@ -28,7 +29,7 @@ export class Keyboard {
       this.createRow(e);
     });
 
-    this.terminal = document.querySelector('.terminal');
+    this.terminal = terminal;
 
     document.addEventListener('keydown', this.pressKey);
     document.addEventListener('keyup', this.releaseKey);
@@ -82,7 +83,30 @@ export class Keyboard {
     }
 
     if (!this.keys[keyName].isFunc) {
-      this.terminal.value = `${this.terminal.value}${this.keys[keyName].keyChar}`;
+      const inputChar = this.keys[keyName].keyChar;
+      this.insertChar(inputChar);
+    }
+
+    if (keyName === 'Tab') {
+      const inputChar = '    ';
+      this.insertChar(inputChar);
+    }
+
+    if (keyName === 'Enter') {
+      const inputChar = '\n';
+      this.insertChar(inputChar);
+    }
+
+    if (keyName === 'Delete') {
+      const cursorPosition = this.terminal.selectionEnd;
+      this.terminal.value = `${this.terminal.value.slice(0, cursorPosition)}${this.terminal.value.slice(cursorPosition + 1)}`;
+      this.terminal.selectionEnd = cursorPosition;
+    }
+
+    if (keyName === 'Backspace') {
+      const cursorPosition = this.terminal.selectionEnd;
+      this.terminal.value = `${this.terminal.value.slice(0, Math.max(0, cursorPosition - 1))}${this.terminal.value.slice(cursorPosition)}`;
+      this.terminal.selectionEnd = Math.max(0, cursorPosition - 1);
     }
   }
 
@@ -139,5 +163,14 @@ export class Keyboard {
 
   changeLang() {
     this.keyboardLang = this.keyboardLang === 'eng' ? 'rus' : 'eng';
+  }
+
+  insertChar(char) {
+    const cursorPosition = this.terminal.selectionEnd;
+    const firstSubstring = this.terminal.value.slice(0, cursorPosition);
+    const inputChar = char;
+    const secondSubstring = this.terminal.value.slice(cursorPosition);
+    this.terminal.value = `${firstSubstring}${inputChar}${secondSubstring}`;
+    this.terminal.selectionEnd = cursorPosition + inputChar.length;
   }
 }

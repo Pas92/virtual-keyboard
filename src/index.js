@@ -6,7 +6,11 @@ terminal.classList.add('terminal');
 terminal.rows = 5;
 document.body.append(terminal);
 
-const keyboard = new Keyboard(keyboardData);
+// terminal.addEventListener('click', () => {
+//   console.log(terminal.selectionEnd);
+// });
+
+const keyboard = new Keyboard(keyboardData, terminal);
 document.body.append(keyboard.getDOM());
 
 document.addEventListener('keydown', (e) => {

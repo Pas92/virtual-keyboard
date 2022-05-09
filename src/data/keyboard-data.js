@@ -1051,18 +1051,18 @@ export const keyboardData = [
 
     {
       eng: {
-        char: '',
-        shiftChar: '',
-        capsChar: '',
-        shiftCapsChar: '',
+        char: ' ',
+        shiftChar: ' ',
+        capsChar: ' ',
+        shiftCapsChar: ' ',
       },
       rus: {
-        char: '',
-        shiftChar: '',
-        capsChar: '',
-        shiftCapsChar: '',
+        char: ' ',
+        shiftChar: ' ',
+        capsChar: ' ',
+        shiftCapsChar: ' ',
       },
-      isFunc: true,
+      isFunc: false,
       isRow: false,
       code: 'Space',
     },

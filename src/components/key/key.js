@@ -33,7 +33,7 @@ export class Key {
     this.isFunc = keyData.isFunc;
     this.isRow = keyData.isRow;
 
-    if (this.isFunc) {
+    if (this.isFunc || this.keyChar === ' ') {
       this.HTML.classList.add(customStyles[this.code]);
     }
 

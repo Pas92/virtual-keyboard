@@ -14,6 +14,7 @@ export class Keyboard {
     this.initKeysEvents = this.initKeysEvents.bind(this);
     this.changeChar = this.changeChar.bind(this);
     this.insertChar = this.insertChar.bind(this);
+    this.keyAction = this.keyAction.bind(this);
 
     this.isCaps = false;
     this.isShift = false;
@@ -143,6 +144,10 @@ export class Keyboard {
 
   keyAction(keyName) {
     switch (true) {
+      case this.pressedKeys.has('AltLeft') && this.pressedKeys.has('ShiftLeft'):
+        this.changeLang();
+        this.changeChar();
+        break;
       case keyName === 'CapsLock':
         if (this.isCaps) {
           this.isCaps = false;
@@ -154,10 +159,6 @@ export class Keyboard {
         break;
       case keyName === 'ShiftLeft' || keyName === 'ShiftRight':
         this.isShift = true;
-        this.changeChar();
-        break;
-      case this.pressedKeys.has('AltLeft') && this.pressedKeys.has('ShiftLeft'):
-        this.changeLang();
         this.changeChar();
         break;
       case keyName === 'Tab':

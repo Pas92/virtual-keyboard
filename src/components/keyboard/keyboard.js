@@ -51,7 +51,6 @@ export class Keyboard {
   }
 
   getDOM() {
-    console.log(this.keys);
     return this.HTML;
   }
 

@@ -62,52 +62,7 @@ export class Keyboard {
     this.keys[keyName].press();
     this.pressedKeys.add(keyName);
 
-    if (keyName === 'CapsLock') {
-      if (this.isCaps) {
-        this.isCaps = false;
-        this.changeChar();
-      } else {
-        this.isCaps = true;
-        this.changeChar();
-      }
-    }
-
-    if (keyName === 'ShiftLeft' || keyName === 'ShiftRight') {
-      this.isShift = true;
-      this.changeChar();
-    }
-
-    if (this.pressedKeys.has('AltLeft') && this.pressedKeys.has('ShiftLeft')) {
-      this.changeLang();
-      this.changeChar();
-    }
-
-    if (!this.keys[keyName].isFunc) {
-      const inputChar = this.keys[keyName].keyChar;
-      this.insertChar(inputChar);
-    }
-
-    if (keyName === 'Tab') {
-      const inputChar = '    ';
-      this.insertChar(inputChar);
-    }
-
-    if (keyName === 'Enter') {
-      const inputChar = '\n';
-      this.insertChar(inputChar);
-    }
-
-    if (keyName === 'Delete') {
-      const cursorPosition = this.terminal.selectionEnd;
-      this.terminal.value = `${this.terminal.value.slice(0, cursorPosition)}${this.terminal.value.slice(cursorPosition + 1)}`;
-      this.terminal.selectionEnd = cursorPosition;
-    }
-
-    if (keyName === 'Backspace') {
-      const cursorPosition = this.terminal.selectionEnd;
-      this.terminal.value = `${this.terminal.value.slice(0, Math.max(0, cursorPosition - 1))}${this.terminal.value.slice(cursorPosition)}`;
-      this.terminal.selectionEnd = Math.max(0, cursorPosition - 1);
-    }
+    this.keyAction(keyName);
   }
 
   releaseKey(event) {
@@ -172,5 +127,56 @@ export class Keyboard {
     const secondSubstring = this.terminal.value.slice(cursorPosition);
     this.terminal.value = `${firstSubstring}${inputChar}${secondSubstring}`;
     this.terminal.selectionEnd = cursorPosition + inputChar.length;
+  }
+
+  deleteCharBeforeCursor() {
+    const cursorPosition = this.terminal.selectionEnd;
+    this.terminal.value = `${this.terminal.value.slice(0, Math.max(0, cursorPosition - 1))}${this.terminal.value.slice(cursorPosition)}`;
+    this.terminal.selectionEnd = Math.max(0, cursorPosition - 1);
+  }
+
+  deleteCharAfterCursor() {
+    const cursorPosition = this.terminal.selectionEnd;
+    this.terminal.value = `${this.terminal.value.slice(0, cursorPosition)}${this.terminal.value.slice(cursorPosition + 1)}`;
+    this.terminal.selectionEnd = cursorPosition;
+  }
+
+  keyAction(keyName) {
+    switch (true) {
+      case keyName === 'CapsLock':
+        if (this.isCaps) {
+          this.isCaps = false;
+          this.changeChar();
+        } else {
+          this.isCaps = true;
+          this.changeChar();
+        }
+        break;
+      case keyName === 'ShiftLeft' || keyName === 'ShiftRight':
+        this.isShift = true;
+        this.changeChar();
+        break;
+      case this.pressedKeys.has('AltLeft') && this.pressedKeys.has('ShiftLeft'):
+        this.changeLang();
+        this.changeChar();
+        break;
+      case keyName === 'Tab':
+        this.insertChar('    ');
+        break;
+      case keyName === 'Enter':
+        this.insertChar('\n');
+        break;
+      case keyName === 'Backspace':
+        this.deleteCharBeforeCursor();
+        break;
+      case keyName === 'Delete':
+        this.deleteCharAfterCursor();
+        break;
+      default:
+        if (!this.keys[keyName].isFunc) {
+          const inputChar = this.keys[keyName].keyChar;
+          this.insertChar(inputChar);
+        }
+    }
   }
 }
